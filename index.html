@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
   <script src="https://kit.fontawesome.com/64f5e4ae10.js" crossorigin="anonymous"></script>
   <title>Reminder App - Note</title>
 </head>
@@ -59,33 +60,35 @@
     </div>
     <div class="notes">
       <div class="row">
-        <div class="col">
-          <div class="content">
-            <div class="notes-title">
-              My Dream
-            </div>
-            <div class="notes-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis explicabo, eveniet culpa, quo illo
-              magni deleniti est saepe quae quaerat obcaecati voluptatem nisi deserunt accusantium delectus eius! Vitae
-              laborum nihil ullam recusandae error? At ullam animi consequatur laboriosam perspiciatis iste debitis iure
-              corrupti mollitia ea. Eos amet voluptas dolor enim!
-            </div>
-          </div>
-          <div class="bottom-note">
-            <div class="date">
-              30 November 2022
-            </div>
-            <div class="button">
-              <i class="fa-solid fa-star" id="star"></i>
-              <span id="edit">
-                <i class="fa-solid fa-pen"></i>
-              </span>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </main>
+
+  <!-- !pop up add note -->
+  <div class="pop-up">
+    <div class="form">
+      <div class="popup-top">
+        <label for="title">
+          <span>Judul</span>
+          <input type="text" id="titleNotes">
+        </label>
+  
+        <label for="content">
+          <span>Catatan</span>
+          <textarea name="catatan" id="contentNotes"></textarea>
+        </label>
+      </div>
+      <div class="popup-bottom">
+        <button type="reset" id="batal">Batal</button>
+        <button type="submit" id="tambah">Tambah</button>
+      </div>
+    </d>
+  </div>
+
+  <!-- !SCRIPT -->
+  <script src="script/script-keep-notes.js"></script>
+
 </body>
 
 </html>
