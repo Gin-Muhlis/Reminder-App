@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background: #FFFAFA;
+  font-family: 'Poppins', sans-serif;
+  height: inherit;
+}
+
+/* !SIDEBAR */
+#sidebar {
+  width: 20%;
+  min-width: 200px;
+  background: #111827;
+  height: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#sidebar .logo {
+  padding: 40px 25px 0;
+}
+
+#sidebar .logo .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+#sidebar .logo img {
+  width: 180px;
+  display: block;
+}
+
+#sidebar .logo .title i {
+  color: #FFFAFA;
+  font-size: 25px;
+}
+
+#sidebar h1 {
+  font-size: 22px;
+  color: #FFFAFA;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: .8px;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, .1);
+}
+
+#sidebar .menu {
+  width: 100%;
+  padding: 0 20px;
+}
+
+#sidebar .menu ul {
+  list-style-type: none;
+  width: inherit;
+}
+
+#sidebar .menu ul li {
+  margin-block: 20px;
+  width: inherit;
+}
+
+#sidebar .menu ul li a {
+  width: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+#sidebar .menu ul li a:hover {
+  background: #ff9900;
+}
+
+#sidebar .menu ul li.active a {
+  background: #ff9900;
+}
+
+#sidebar .menu ul li a i {
+  width: 20px;
+  margin-right: 5px;
+}
+
+#sidebar .bottom-sidebar {
+  padding: 20px;
+}
+
+#sidebar .bottom-sidebar span {
+  font-size: 18px;
+  color: #ff9900;
+  font-weight: 600;
+}
+
+/* !MAIN CONTENT */
+main {
+  width: calc(100% - 20%);
+  position: relative;
+  left: 20%;
+}
+
+main .about {
+  padding: 30px 20px;
+  margin-bottom: 50px
+}
+
+.about h2 {
+  font-size: 35px;
+  color: #111827;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.about p {
+  font-size: 17px;
+  line-height: 30px;
+  color: #182133;
+  font-family: 'Lora', serif;
+}
+
+.addNotes {
+  padding-inline: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(17, 24, 39, .25);
+}
+
+.addNotes #addNote {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 15px 30px;
+  color: #FFFAFA;
+  font-weight: 600;
+  background: #111827;
+  cursor: pointer;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+#addNote i {
+  margin-left: 3px;
+}
+
+.notes {
+  padding: 30px 20px;
+}
+
+.notes .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.row .col {
+  width: 280px;
+  height: 300px;
+  background: rgb(236, 211, 157);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.col .notes-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.col .notes-content {
+  color: #182133;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 100%;
+  height: 150px;
+  overflow: scroll;
+}
+
+.col .notes-content::-webkit-scrollbar {
+  display: none;
+}
+
+.col .bottom-note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.bottom-note .date {
+  font-size: 12px;
+  color: #182133;
+}
+
+.bottom-note .button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bottom-note .button #star {
+  color: #ff9900;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.bottom-note .button #edit {
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111827;
+  color: #FFFAFA;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

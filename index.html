@@ -1,32 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/64f5e4ae10.js" crossorigin="anonymous"></script>
   <title>Reminder App - Note</title>
 </head>
+
 <body>
   <!-- !sidebar menu -->
   <div id="sidebar">
     <div class="top-sidebar">
       <div class="logo">
-        <h1>Reminder App</h1>
+        <div class="title">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h1>Reminder App</h1>
+        </div>
+        <img src="image/image1.png" alt="3d image">
       </div>
       <div class="menu">
         <ul>
-          <li>
-            <a href="#">Keep Note</a>
+          <li class="active">
+            <a href="#">
+              <i class="fa-solid fa-book"></i>
+              Keep Notes
+            </a>
           </li>
           <li>
-            <a href="#">To Do List</a>
+            <a href="#">
+              <i class="fa-solid fa-list-check"></i>
+              To Do List
+            </a>
           </li>
         </ul>
       </div>
     </div>
     <div class="bottom-sidebar">
-      <span>Tecno G </span>
+      <span>Techno G </span>
     </div>
   </div>
+
+  <!-- !MAIN CONTENT -->
+  <main>
+    <div class="about">
+      <h2>Keep Notes</h2>
+      <p>Menyimpan catatan dengan mudah dan tidak akan hilang karena data yang ditulis akan disimpan di local storage,
+        sehingga ketika anda meninggalkan halam ini atau di refresh apa yang ditulis tidak akan hilang. Jadi anda bisa
+        menyimpan catatan anda disini dengan mudah</p>
+    </div>
+    <div class="addNotes">
+      <button id="addNote">
+        <span>Add Notes</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+    <div class="notes">
+      <div class="row">
+        <div class="col">
+          <div class="content">
+            <div class="notes-title">
+              My Dream
+            </div>
+            <div class="notes-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis explicabo, eveniet culpa, quo illo
+              magni deleniti est saepe quae quaerat obcaecati voluptatem nisi deserunt accusantium delectus eius! Vitae
+              laborum nihil ullam recusandae error? At ullam animi consequatur laboriosam perspiciatis iste debitis iure
+              corrupti mollitia ea. Eos amet voluptas dolor enim!
+            </div>
+          </div>
+          <div class="bottom-note">
+            <div class="date">
+              30 November 2022
+            </div>
+            <div class="button">
+              <i class="fa-solid fa-star" id="star"></i>
+              <span id="edit">
+                <i class="fa-solid fa-pen"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>
