@@ -87,7 +87,6 @@ main .about {
 .row .col {
   width: 280px;
   height: 300px;
-  background: rgb(236, 211, 157);
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -139,13 +138,19 @@ main .about {
   gap: 15px;
 }
 
-.bottom-note .button #star {
-  color: #ff9900;
-  font-size: 22px;
+.bottom-note .button .starField {
   cursor: pointer;
 }
 
-.bottom-note .button #edit {
+.bottom-note .button .star {
+  font-size: 20px;
+}
+
+.bottom-note .button .star.starred {
+  color: #ff9900;
+}
+
+.bottom-note .button .edit {
   font-size: 12px;
   width: 30px;
   height: 30px;
@@ -153,6 +158,7 @@ main .about {
   align-items: center;
   justify-content: center;
   background: #111827;
+  cursor: pointer;
   color: #FFFAFA;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -162,12 +168,12 @@ main .about {
 }
 
 /* !POP UP ADD NOTE */
-.pop-up {
+.pop-up,
+.pop-up-edit {
   width: 480px;
-  height: 400px;
   background: #FFFAFA;
   box-shadow: 0 0 0 100vmax rgba(17, 24, 39, .7);
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -190,7 +196,8 @@ main .about {
   -o-transition: .5s;
 }
 
-.pop-up.show {
+.pop-up.show,
+.pop-up-edit.show {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
@@ -200,7 +207,8 @@ main .about {
   -o-transform: translate(-50%, -50%) scale(1);
 }
 
-.pop-up .form {
+.pop-up .form,
+.pop-up-edit .form-edit {
   width: 100%;
   height: 100%;
   display: flex;
@@ -209,20 +217,24 @@ main .about {
   justify-content: space-between;
 }
 
-.form .popup-top {
+.form .popup-top,
+.form-edit .popup-top-edit {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  margin-bottom: 10px;
 }
 
-.form .popup-top label {
+.form .popup-top label,
+.form-edit .popup-top-edit label {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.form .popup-top label span {
+.form .popup-top label span,
+.form-edit .popup-top-edit label span {
   font-size: 18px;
   margin-bottom: 5px;
   color: #111827;
@@ -230,7 +242,9 @@ main .about {
 }
 
 .form .popup-top label input,
-.form .popup-top label textarea {
+.form .popup-top label textarea,
+.form-edit .popup-top-edit label input, 
+.form-edit .popup-top-edit label textarea {
   outline: none;
   background: none;
   width: 100%;
@@ -252,23 +266,29 @@ main .about {
 }
 
 .form .popup-top label input:focus,
-.form .popup-top label textarea:focus {
+.form .popup-top label textarea:focus,
+.form-edit .popup-top-edit label input:focus,
+.form-edit .popup-top-edit label textarea:focus {
   border: 1px solid rgba(17, 24, 39, .85);
 }
 
-.form .popup-top label textarea {
+.form .popup-top label textarea,
+.form-edit .popup-top-edit label textarea {
   height: 170px;
 }
 
-.form .popup-bottom {
+.form .popup-bottom,
+.form-edit .popup-bottom-edit {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
   gap: 20px;
+  margin-top: 10px;
 }
 
-.form .popup-bottom button {
+.form .popup-bottom button,
+.form-edit .popup-bottom-edit button {
   outline: none;
   border: none;
   font-size: 14px;
@@ -292,17 +312,25 @@ main .about {
   padding: 5px 20px;
 }
 
-.form .popup-bottom button#tambah {
+.form .popup-bottom button#tambah,
+.form-edit .popup-bottom-edit button#edit {
   color: #FFFAFA;
   background: #111827;
   padding: 7px 20px;
 }
 
 .form .popup-bottom button#reset:hover,
-.form .popup-bottom button#tambah:hover {
+.form .popup-bottom button#tambah:hover,
+.form-edit .popup-bottom-edit button#edit:hover {
   transform: scale(.95);
   -webkit-transform: scale(.95);
   -moz-transform: scale(.95);
   -ms-transform: scale(.95);
   -o-transform: scale(.95);
+}
+
+.form .alert {
+  color: #FF0000;
+  font-size: 14px;
+  opacity: 0;
 }

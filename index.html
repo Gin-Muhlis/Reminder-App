@@ -60,7 +60,7 @@
     </div>
     <div class="notes">
       <div class="row">
-       
+
       </div>
     </div>
   </main>
@@ -69,25 +69,51 @@
   <div class="pop-up">
     <div class="form">
       <div class="popup-top">
-        <label for="title">
+        <label for="titleNotes">
           <span>Judul</span>
           <input type="text" id="titleNotes">
         </label>
-  
-        <label for="content">
+
+        <label for="contentNotes">
           <span>Catatan</span>
           <textarea name="catatan" id="contentNotes"></textarea>
         </label>
+      </div>
+      <div class="alert">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Judul atau catatan tidak boleh kosong</span>
       </div>
       <div class="popup-bottom">
         <button type="reset" id="batal">Batal</button>
         <button type="submit" id="tambah">Tambah</button>
       </div>
-    </d>
+      </d>
+    </div>
   </div>
 
-  <!-- !SCRIPT -->
-  <script src="script/script-keep-notes.js"></script>
+  <!-- !pop up edit note -->
+  <div class="pop-up-edit">
+    <div class="form-edit">
+      <div class="popup-top-edit">
+        <label for="title-edit">
+          <span>Judul</span>
+          <input type="text" id="title-edit">
+        </label>
+
+        <label for="content-edit">
+          <span>Catatan</span>
+          <textarea name="catatan-edit" id="content-edit"></textarea>
+        </label>
+      </div>
+      <div class="popup-bottom-edit">
+        <button type="submit" id="edit">Edit</button>
+      </div>
+      </d>
+    </div>
+
+
+    <!-- !SCRIPT -->
+    <script src="script/script-keep-notes.js"></script>
 
 </body>
 
