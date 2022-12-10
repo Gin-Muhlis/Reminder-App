@@ -329,7 +329,8 @@ main .about {
   -o-transform: scale(.95);
 }
 
-.form .alert {
+.form .alert,
+.form-edit .alert {
   color: #FF0000;
   font-size: 14px;
   opacity: 0;
