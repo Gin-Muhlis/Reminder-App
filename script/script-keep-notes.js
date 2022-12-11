@@ -5,24 +5,29 @@ const addText = document.querySelector('#contentNotes');
 const addPopup = document.querySelector(".pop-up");
 const addButtonNote = document.querySelector('#tambah')
 const closeButtonPopupAdd = document.querySelector('#batal');
-const editPopup = document.querySelector('.pop-up-edit');
-const editTitle = document.querySelector('#title-edit');
-const editText = document.querySelector('#content-edit');
-const editButtonNote = document.querySelector('#edit')
 const alertTextAdd = document.querySelector('.form .alert');
-const alertTextEdit = document.querySelector('.form-edit .alert');
+const popupDelete = document.querySelector('.pop-up-delete');
+const closeButtonPopupDelete = document.querySelector('#batal-delete');
+const deleteButtonNote = document.querySelector('#delete');
 
 addButtonPopupAdd.addEventListener('click', () => {
   addPopup.classList.add('show'); // !menampilkan popup untuk menambahkan note
+  closeButtonPopupAdd.classList.add('available');
+  addButtonNote.textContent = 'Tambah';
 })
 
 closeButtonPopupAdd.addEventListener('click', () => {
   addPopup.classList.remove('show'); // !menyembunyikan popup untuk menambahkan note
 })
 
+closeButtonPopupDelete.addEventListener('click', function() {
+  popupDelete.classList.remove('show'); // !menyembunyikan popup untuk mendelete note
+})
+
 
 addButtonNote.addEventListener('click', () => {
   let notes = localStorage.getItem('NOTES'); // !mengambil data dari local storage
+
 
   if (addTitle.value.length === 0 || addText.value.length === "") { // !mengecek jika user tidak mengisi judul atau isi note
     alertTextAdd.style.opacity = 1; // !tampilkan pesan peringatan untuk mengisi judul dan isi note
@@ -44,7 +49,7 @@ addButtonNote.addEventListener('click', () => {
       bgColor: randomColor()
     }
 
-    noteObj.push(myObj); // !menyimpan data setiap note didalam array
+    noteObj.unshift(myObj); // !menyimpan data setiap note didalam array
 
     localStorage.setItem('NOTES', JSON.stringify(noteObj)); // !mengirim data setiap note dalam bentuk string
 
@@ -82,8 +87,8 @@ function renderNotes() {
           ${dateNow()}
         </div>
         <div class="button">
-          <div class="starField">
-            <i class="fa-regular fa-star star"></i>
+          <div class="deleteField" id="${index}" onclick="deleteNote(this.id)">
+          <i class="fa-solid fa-trash"></i>
           </div>
           <span class="edit" id="${index}" onclick="editNote(this.id)">
             <i class="fa-solid fa-pen"></i>
@@ -105,6 +110,8 @@ function renderNotes() {
 function editNote(index) {
   let notes = localStorage.getItem('NOTES'); // !mengambil data dari local storage 
 
+  closeButtonPopupAdd.classList.remove('available');
+  addButtonNote.textContent = 'Edit';
   addPopup.classList.add('show');
 
   if (notes === null) { // !mengecek apakah ada data atau tidak di local storage
@@ -123,6 +130,30 @@ function editNote(index) {
 
 }
 
+// !membuat function untuk menghapus note
+function deleteNote(index) {
+  popupDelete.classList.add('show');
+
+  deleteButtonNote.addEventListener('click', function() {
+    let notes = localStorage.getItem('NOTES'); // !mengambil data dari local storage 
+  
+    if (notes === null) { // !mengecek apakah ada data atau tidak di local storage
+      noteObj = []; // !jika tidak ada kembalikan array kosong di noteObj
+    } else {
+      noteObj = JSON.parse(notes); // !Jika ada kembalikan datanya dalanya dengan mengubah datanya dari string menjadi object
+    }
+  
+  
+  
+    noteObj.splice(index, 1);
+    localStorage.setItem("NOTES", JSON.stringify(noteObj));
+  
+    renderNotes();
+
+    popupDelete.classList.remove('show');
+
+  })
+}
 
 // !membuat function untuk merandom warna background note
 function randomColor() {

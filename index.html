@@ -85,36 +85,22 @@
       </div>
       <div class="popup-bottom">
         <button type="reset" id="batal">Batal</button>
-        <button type="submit" id="tambah">Tambah</button>
+        <button type="submit" id="tambah"></button>
       </div>
       </d>
     </div>
   </div>
 
-  <!-- !pop up edit note -->
-  <div class="pop-up-edit">
-    <div class="form-edit">
-      <div class="popup-top-edit">
-        <label for="title-edit">
-          <span>Judul</span>
-          <input type="text" id="title-edit">
-        </label>
-
-        <label for="content-edit">
-          <span>Catatan</span>
-          <textarea name="catatan-edit" id="content-edit"></textarea>
-        </label>
-      </div>
-      <div class="alert">
-        <i class="fa-solid fa-circle-exclamation"></i>
-        <span>Judul atau catatan tidak boleh kosong</span>
-      </div>
-      <div class="popup-bottom-edit">
-        <button type="submit" id="edit">Edit</button>
-      </div>
-      </d>
+  <!-- !pop up delete note -->
+  <div class="pop-up-delete">
+    <div class="text">
+      Apakah anda yakin ingin menghapusnya?
     </div>
-
+    <div class="button-delete-field">
+      <button type="button" id="batal-delete">Batal</button>
+      <button type="button" id="delete">Hapus</button>
+    </div>
+  </div>
 
     <!-- !SCRIPT -->
     <script src="script/script-keep-notes.js"></script>
