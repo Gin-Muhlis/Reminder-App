@@ -107,6 +107,7 @@ main .container {
   -o-border-radius: 5px;
 }
 
+
 .wrapper .list-field {
   width: 100%;
   padding: 35px 25px;
@@ -136,6 +137,11 @@ main .container {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+
+.list-field .list.finish {
+  background: #38E54D;
+  color: #FFFAFA;
 }
 
 .list .text-list {
