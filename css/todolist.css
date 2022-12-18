@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *,
 *::before,
@@ -193,6 +193,6 @@ main .container {
 }
 
 .button-list .button-delete-list {
-  background: #CF0A0A;
+  background: #ff9900;
   font-size: 14px;
 }
