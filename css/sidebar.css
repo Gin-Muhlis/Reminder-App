@@ -141,3 +141,88 @@
   font-weight: 600;
 }
 
+
+.menu-button {
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 25px;
+  
+}
+
+.hamberger-menu {
+  --height: 3px;
+  height: 3px;
+  width: 100%;
+  background-color: #111827;
+  border-radius: calc(var(--height));
+  position: relative;
+  transform: rotate(0deg);
+  transition: all ease 0.5s;
+  -webkit-border-radius: calc(var(--height));
+  -moz-border-radius: calc(var(--height));
+  -ms-border-radius: calc(var(--height));
+  -o-border-radius: calc(var(--height));
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+
+.hamberger-menu::before,
+.hamberger-menu::after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  border-radius: inherit;
+  transition: all ease 0.5s;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+}
+
+.hamberger-menu::before {
+  top: -5px;
+  left: 0;
+  transform-origin: left;
+}
+
+.hamberger-menu::after {
+  bottom: -5px;
+  right: 0;
+  transform-origin: right;
+}
+
+
+@media screen and (max-width: 500px) {
+  #sidebar {
+    width: 100%;
+    left: -110%;
+  }
+
+  #sidebar .close-sidebar-button {
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    font-size: 22px;
+  }
+
+  #sidebar .logo {
+    padding: 50px 15px 0;
+  }
+
+  #sidebar .logo .title {
+    justify-content: center;
+  }
+
+  #sidebar .logo img {
+    margin-inline: auto;
+  }
+}

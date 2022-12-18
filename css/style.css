@@ -22,7 +22,7 @@ body {
 /* !MAIN CONTENT */
 main {
   position: relative;
-  padding: 0 50px;
+  padding: 0 35px;
   transition: .5s;
   -webkit-transition: .5s;
   -moz-transition: .5s;
@@ -30,68 +30,9 @@ main {
   -o-transition: .5s;
 }
 
-.menu-button {
-  height: 30px;
-  width: 30px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-top: 25px;
-  margin-left: 25px;
-  
-}
-
-.hamberger-menu {
-  --height: 3px;
-  height: 3px;
-  width: 100%;
-  background-color: #111827;
-  border-radius: calc(var(--height));
-  position: relative;
-  transform: rotate(0deg);
-  transition: all ease 0.5s;
-  -webkit-border-radius: calc(var(--height));
-  -moz-border-radius: calc(var(--height));
-  -ms-border-radius: calc(var(--height));
-  -o-border-radius: calc(var(--height));
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-}
-
-.hamberger-menu::before,
-.hamberger-menu::after {
-  content: "";
-  position: absolute;
-  background-color: inherit;
-  height: 100%;
-  width: 50%;
-  margin: auto;
-  border-radius: inherit;
-  transition: all ease 0.5s;
-  -webkit-border-radius: inherit;
-  -moz-border-radius: inherit;
-  -ms-border-radius: inherit;
-  -o-border-radius: inherit;
-}
-
-.hamberger-menu::before {
-  top: -5px;
-  left: 0;
-  transform-origin: left;
-}
-
-.hamberger-menu::after {
-  bottom: -5px;
-  right: 0;
-  transform-origin: right;
-}
-
 main .about {
-  padding: 30px 20px;
-  margin-bottom: 50px
+  padding: 30px 0;
+  margin-bottom: 50px;
 }
 
 .about h2 {
@@ -109,7 +50,6 @@ main .about {
 }
 
 .addNotes {
-  padding-inline: 20px;
   padding-bottom: 20px;
   border-bottom: 2px solid rgba(17, 24, 39, .25);
 }
@@ -135,7 +75,7 @@ main .about {
 }
 
 .notes {
-  padding: 30px 20px;
+  padding: 50px 0;
 }
 
 .notes .row {
@@ -155,7 +95,7 @@ main .about {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  box-shadow: 0 6px 30px rgba(17, 24, 39, .3);
+  box-shadow: 6px 6px 10px rgba(17, 24, 39, .2);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -204,7 +144,7 @@ main .about {
 
 .bottom-note .button .deleteField {
   cursor: pointer;
-  color: #CF0A0A;
+  color: #ff9900;
   opacity: .8;
   font-size: 20px;
   transition: .5s;
@@ -379,6 +319,7 @@ main .about {
 }
 
 .form .popup-bottom button#batal {
+  background: none;
   color: #111827;
   border: 1px solid #111827;
   padding: 5px 20px;
@@ -406,8 +347,7 @@ main .about {
   -o-transform: scale(.95);
 }
 
-.form .alert,
-.form-edit .alert {
+.form .alert {
   color: #FF0000;
   font-size: 14px;
   opacity: 0;
@@ -482,6 +422,7 @@ main .about {
 
 .pop-up-delete .button-delete-field button#batal-delete {
   color: #111827;
+  background: none;
   border: 1px solid #111827;
   padding: 5px 20px;
 }
@@ -499,4 +440,92 @@ main .about {
   -moz-transform: scale(.95);
   -ms-transform: scale(.95);
   -o-transform: scale(.95);
+}
+
+/* !RESPONSIVE BREAK POINT */
+@media screen and (max-width: 500px) {
+  main {
+    padding: 0 15px;
+  }
+
+  main .about {
+    padding: 30px 0 0;
+  }
+
+  .about h2 {
+    font-size: 25px;
+    margin-bottom: 7px;
+  } 
+
+  .about p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .addNotes #addNote {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+
+  .notes .row {
+    justify-content: center;
+  }
+
+  .row .col {
+    width: 250px;
+    padding: 20px;
+  }
+
+  .bottom-note .button {
+    gap: 10px;
+  }
+
+  .bottom-note .button .deleteField {
+    font-size: 20px;
+  }
+
+  .bottom-note .button .edit {
+    width: 27px;
+    height: 27px;
+  }
+
+  .pop-up {
+    width: 300px;
+  }
+
+  .form .popup-top label span {
+    font-size: 16px;
+  }
+
+  .form .popup-top label input,
+  .form .popup-top label textarea {
+    font-size: 14px;
+    padding: 7px;
+  }
+
+  .form .popup-top label textarea{
+    height: 150px;
+  }
+
+  .form .alert {
+    font-size: 12px;
+    margin-block: 3px;
+  }
+
+  .form .popup-bottom button,
+  .pop-up-delete .button-delete-field button {
+    font-size: 13px;
+  }
+
+  .pop-up-delete {
+    width: 300px;
+    padding: 25px 15px;
+  }
+
+  .pop-up-delete .text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
 }
