@@ -74,6 +74,7 @@ function renderNotes() {
     noteObj = JSON.parse(notes); // !Jika ada kembalikan datanya dalanya dengan mengubah datanya dari string menjadi object
   }
 
+  // !Membuat templete tampilan note secara dinamis
   let templeteHTML = "";
 
   noteObj.forEach((element, index) => {
@@ -98,6 +99,7 @@ function renderNotes() {
     </div>`
   });
 
+  // !Menampilkan note jika data terdapat note di local storage
   let rowElement = document.querySelector('.row');
   if (noteObj.length != 0) {
     rowElement.innerHTML = templeteHTML;
@@ -120,6 +122,7 @@ function editNote(index) {
     noteObj = JSON.parse(notes); // !Jika ada kembalikan datanya dalanya dengan mengubah datanya dari string menjadi object
   }
 
+  // !mengeset value input edit sesuai data note yang di klik
   addTitle.value = noteObj[index].title;
   addText.value = noteObj[index].text;
 
@@ -132,7 +135,7 @@ function editNote(index) {
 
 // !membuat function untuk menghapus note
 function deleteNote(index) {
-  popupDelete.classList.add('show');
+  popupDelete.classList.add('show'); //! enampilkan pop up delete
 
   deleteButtonNote.addEventListener('click', function() {
     let notes = localStorage.getItem('NOTES'); // !mengambil data dari local storage 
@@ -143,37 +146,34 @@ function deleteNote(index) {
       noteObj = JSON.parse(notes); // !Jika ada kembalikan datanya dalanya dengan mengubah datanya dari string menjadi object
     }
   
-  
-  
-    noteObj.splice(index, 1);
+    noteObj.splice(index, 1); // !Menghapus note sesuai yang di dklik user menggunakan index dari notenya
     localStorage.setItem("NOTES", JSON.stringify(noteObj));
   
     renderNotes();
 
-    popupDelete.classList.remove('show');
-
+    popupDelete.classList.remove('show'); // !Menyembunyikan pop up delete
   })
 }
 
 // !membuat function untuk merandom warna background note
 function randomColor() {
-  let randomNumber = Math.floor(Math.random() * 10);
-  let colors = ['FAEAB1', 'D09CFA', 'E6DDC4', '97DECE', 'FFCAC8', 'FCF9BE', 'FFADBC', 'BA94D1', 'B6E2A1', 'CFB997'];
+  let randomNumber = Math.floor(Math.random() * 10); // !Membuat random angka dari 0 sampeai 10
+  let colors = ['FAEAB1', 'D09CFA', 'E6DDC4', '97DECE', 'FFCAC8', 'FCF9BE', 'FFADBC', 'BA94D1', 'B6E2A1', 'CFB997']; // !menyimpan data data warna yang akan digunakan
 
-  let bgColor = `#${colors[randomNumber]}`;
+  let bgColor = `#${colors[randomNumber]}`; // !mengeset bg color sesuai warna yang ada pada array dengan index angka random
 
   return bgColor;
 }
 
 // !membuat function untuk mencetak tanggal sekarang
 function dateNow() {
-  let now = new Date;
-  let date = now.getDate();
-  let monthNumber = now.getMonth();
-  let year = now.getFullYear();
-  let monthText = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  let now = new Date; // !mengintansiasi tanggal
+  let date = now.getDate();// !mengambil tanggal
+  let monthNumber = now.getMonth(); // !mengambil bulan
+  let year = now.getFullYear(); // !mengambil tahun
+  let monthText = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']; // !menyimpan nama nama bulan
 
-  return `${date} ${monthText[monthNumber]} ${year}`;
+  return `${date} ${monthText[monthNumber]} ${year}`; // !mengeset tanggaal sekarang dengan format "tanggal bulan tahun";
 }
 
 renderNotes();

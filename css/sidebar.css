@@ -200,7 +200,7 @@
   transform-origin: right;
 }
 
-
+/* !RESPONSIVE BREAK POINT */
 @media screen and (max-width: 500px) {
   #sidebar {
     width: 100%;
