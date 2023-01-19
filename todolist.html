@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/todolist.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <script
+      src="https://kit.fontawesome.com/64f5e4ae10.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Reminder App - ToDoList</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/todolist.css">
-  <link rel="stylesheet" href="css/sidebar.css">
-  <script src="https://kit.fontawesome.com/64f5e4ae10.js" crossorigin="anonymous"></script>
-  <title>Reminder App - ToDoList</title>
-</head>
-
-<body>
-
-  <!-- !sidebar menu -->
-  <div id="sidebar">
-    <div class="close-sidebar-button">
-      <i class="fa-solid fa-xmark"></i>
-    </div>
-    <div class="top-sidebar">
-      <div class="logo">
-        <div class="title">
-          <i class="fa-solid fa-lightbulb"></i>
-          <h1>Reminder App</h1>
-        </div>
-        <img src="image/image1.png" alt="3d image">
-      </div>
-      <div class="menu">
-        <ul>
-          <li>
-            <a href="index.html">
-              <i class="fa-solid fa-book"></i>
-              Keep Notes
-            </a>
-          </li>
-          <li class="active">
-            <a href="#">
-              <i class="fa-solid fa-list-check"></i>
-              To Do List
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="bottom-sidebar">
-      <span>Techno G </span>
-    </div>
-  </div>
-
-  <!-- !MAIN CONTENT -->
-  <main>
-    <div class="menu-button">
-      <div class="hamberger-menu"></div>
-    </div>
-    <div class="about">
-      <h2>To Do List</h2>
-      <p>Buat list harian dengan mudah sebagai pengingat apa yang harus dilakukan tanpa khawatir list yang dibuat akan
-        hilang.</p>
-    </div>
-    <div class="container">
-      <div class="wrapper">
-        <div class="input-field">
-          <input type="text" id="input-add-list" placeholder="Tulis kegiatanmu disini">
-          <button type="button" id="button-add-list">Tambah</button>
-        </div>
-        
-      </div>
-      <div class="wrapper" id="list">
-        <div class="list-field">
-
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- !POP UP ALERT -->
-  <div class="alert">
-    <div class="text-alert">
-      <i class="fa-solid fa-circle-exclamation"></i>
-      <span>Nama list tidak boleh kosong</span>
-    </div>
-    <div class="button-alert">
-      
+  <body>
+    <!-- !sidebar menu -->
+    <div id="sidebar">
+      <div class="close-sidebar-button">
         <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="top-sidebar">
+        <div class="logo">
+          <div class="title">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h1>Reminder App</h1>
+          </div>
+          <img src="image/image1.png" alt="3d image" />
+        </div>
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-book"></i>
+                Keep Notes
+              </a>
+            </li>
+            <li class="active">
+              <a href="#">
+                <i class="fa-solid fa-list-check"></i>
+                To Do List
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-sidebar">
+        <span>Techno G </span>
+      </div>
     </div>
-  </div>
 
-  <script src="script/script-to-do-list.js"></script>
-  <script src="script/sidebar.js"></script>
+    <!-- !MAIN CONTENT -->
+    <main>
+      <div class="menu-button">
+        <div class="hamberger-menu"></div>
+      </div>
+      <div class="about">
+        <h2>To Do List</h2>
+        <!-- Diganti jadi lebih menarik -->
+        <p>
+          Jangan khawatir lagi tentang kehilangan daftar tugasmu setiap hari,
+          buat daftar harianmu dengan mudah dan pastikan semua tugas pentingmu
+          terselesaikan dengan program pengingat kami yang efektif!
+        </p>
+      </div>
+      <div class="container">
+        <div class="wrapper">
+          <div class="input-field">
+            <input
+              type="text"
+              id="input-add-list"
+              placeholder="Tulis kegiatanmu disini"
+            />
+            <button type="button" id="button-add-list">Tambah</button>
+          </div>
+        </div>
+        <div class="wrapper" id="list">
+          <div class="list-field"></div>
+        </div>
+      </div>
+    </main>
 
-</body>
+    <!-- !POP UP ALERT -->
+    <div class="alert">
+      <div class="text-alert">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>Nama list tidak boleh kosong</span>
+      </div>
+      <div class="button-alert">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
 
+    <script src="script/script-to-do-list.js"></script>
+    <script src="script/sidebar.js"></script>
+  </body>
 </html>
